@@ -105,7 +105,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #d4d0ab; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-f1cffbeab85eafdf965a99c7b369a41a.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-49250aa6d5ba27e8d41b858c26149f76.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -225,6 +225,13 @@ Camille Seaberry
 <section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206d646920726f626f742d6c6f76652d6f75746c696e65203e7d7d-intro" class="title-slide slide level1 center" data-name="Intro">
 <h1><iconify-icon role="img" inline="" icon="mdi:robot-love-outline" aria-label="Icon robot-love-outline from mdi Iconify.design set." title="Icon robot-love-outline from mdi Iconify.design set."></iconify-icon> Intro</h1>
 
+</section>
+<section id="intro" class="slide level2">
+<h2>Intro</h2>
+<ul>
+<li>Slides are online <a href="https://camille-s.github.io/webscraping">camille-s.github.io/webscraping</a></li>
+<li>So is the code that generates them <a href="https://github.com/camille-s/webscraping"><iconify-icon role="img" inline="" icon="mdi:github" aria-label="Icon github from mdi Iconify.design set." title="Icon github from mdi Iconify.design set."></iconify-icon> camille-s/webscraping</a></li>
+</ul>
 </section>
 <section id="what-is-web-scraping" class="slide level2">
 <h2>What is web scraping?</h2>
@@ -350,13 +357,14 @@ Camille Seaberry
 <span id="cb1-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href=""></a><span class="co"># from bs4 import BeautifulSoup</span></span>
 <span id="cb1-4"><a href=""></a><span class="im">from</span> lxml <span class="im">import</span> html</span>
-<span id="cb1-5"><a href=""></a></span>
-<span id="cb1-6"><a href=""></a><span class="co"># get the html</span></span>
-<span id="cb1-7"><a href=""></a>cb_url <span class="op">=</span> <span class="st">"https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.2023.html"</span></span>
-<span id="cb1-8"><a href=""></a>cb_resp <span class="op">=</span> requests.get(cb_url)</span>
-<span id="cb1-9"><a href=""></a></span>
-<span id="cb1-10"><a href=""></a><span class="co"># initiate a parser for the page source</span></span>
-<span id="cb1-11"><a href=""></a>cb_src <span class="op">=</span> html.fromstring(cb_resp.content)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href=""></a><span class="im">import</span> pprint</span>
+<span id="cb1-6"><a href=""></a></span>
+<span id="cb1-7"><a href=""></a><span class="co"># get the html</span></span>
+<span id="cb1-8"><a href=""></a>cb_url <span class="op">=</span> <span class="st">"https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.2023.html"</span></span>
+<span id="cb1-9"><a href=""></a>cb_resp <span class="op">=</span> requests.get(cb_url)</span>
+<span id="cb1-10"><a href=""></a></span>
+<span id="cb1-11"><a href=""></a><span class="co"># initiate a parser for the page source</span></span>
+<span id="cb1-12"><a href=""></a>cb_src <span class="op">=</span> html.fromstring(cb_resp.content)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206d6469207761726e696e67203e7d7d-plot-twist" class="slide level2">
@@ -382,7 +390,7 @@ Camille Seaberry
 <span id="cb2-3"><a href=""></a>)</span>
 <span id="cb2-4"><a href=""></a><span class="bu">print</span>(elements[<span class="dv">0</span>:<span class="dv">4</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;Element h3 at 0x7f6b382149f0&gt;, &lt;Element h4 at 0x7f6b383d2f90&gt;, &lt;Element a at 0x7f6bddc627b0&gt;, &lt;Element h4 at 0x7f6b363f2ad0&gt;]</code></pre>
+<pre><code>[&lt;Element h3 at 0x7f60eafa89f0&gt;, &lt;Element h4 at 0x7f60eaee6f90&gt;, &lt;Element a at 0x7f61a01ea7b0&gt;, &lt;Element h4 at 0x7f60e915ac10&gt;]</code></pre>
 </div>
 </div>
 </section>
@@ -401,10 +409,17 @@ Camille Seaberry
 <span id="cb4-6"><a href=""></a>    <span class="cf">else</span>:</span>
 <span id="cb4-7"><a href=""></a>        href <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb4-8"><a href=""></a>    <span class="cf">return</span> {<span class="st">"tag"</span>: tag, <span class="st">"text"</span>: text, <span class="st">"href"</span>: href}</span>
-<span id="cb4-9"><a href=""></a>element_info <span class="op">=</span> [extract_info(el) <span class="cf">for</span> el <span class="kw">in</span> elements]</span>
-<span id="cb4-10"><a href=""></a><span class="bu">print</span>(element_info[<span class="dv">0</span>:<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-9"><a href=""></a></span>
+<span id="cb4-10"><a href=""></a>element_info <span class="op">=</span> [extract_info(el) <span class="cf">for</span> el <span class="kw">in</span> elements]</span>
+<span id="cb4-11"><a href=""></a>pprint.pp(element_info[<span class="dv">0</span>:<span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[{'tag': 'h3', 'text': 'Phase 3.10 PUF Releases', 'href': None}, {'tag': 'h4', 'text': 'Household Pulse Survey PUF: October 18 - October 30', 'href': None}]</code></pre>
+<pre><code>[{'tag': 'h3', 'text': 'Phase 3.10 PUF Releases', 'href': None},
+ {'tag': 'h4',
+  'text': 'Household Pulse Survey PUF: October 18 - October 30',
+  'href': None},
+ {'tag': 'a',
+  'text': 'HPS Week 63 PUF CSV',
+  'href': 'https://www2.census.gov/programs-surveys/demo/datasets/hhp/2023/wk63/HPS_Week63_PUF_CSV.zip'}]</code></pre>
 </div>
 </div>
 </section>
@@ -675,7 +690,7 @@ Camille Seaberry
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>camille-s.github.io/webscraping</p>
+<p>camille-s.github.io/webscraping - github.com/camille-s/webscraping</p>
 </div>
 </div></div>
 
