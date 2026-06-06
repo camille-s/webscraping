@@ -356,7 +356,7 @@ Your skills get better the more determined / annoyed you are
 
 . . .
 
-{{< iconify mdi warning >}} Obligatory reminder to check the terms & services
+{{< iconify mdi warning >}} Obligatory reminder to check the terms of service
 
 ## Thanks!
 
