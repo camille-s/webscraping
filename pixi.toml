@@ -1,0 +1,19 @@
+[workspace]
+authors = ["camille-s <3202150+camille-s@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "webscraping"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.14.*"
+jupyter = ">=1.1.1,<2"
+selenium = ">=4.43.0,<5"
+pandas = ">=3.0.3,<4"
+requests = ">=2.34.2,<3"
+lxml = ">=6.1.1,<7"
+
+[pypi-dependencies]
+beautifulsoup4 = "*"

@@ -1,0 +1,65 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+// fonts
+$font-family-sans-serif: 'Source Sans 3', 'Barlow', sans-serif !default;
+
+// colors
+$body-bg: #3a3a3a !default;
+$body-color: #fff !default;
+$link-color: #f03fa6 !default;
+$selection-bg: #ec88c3 !default;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;
+
+// headings
+$presentation-heading-font: "Source Code Pro", monospace !default;
+$presentation-heading-letter-spacing: -0.03em;
+
+// code blocks
+$code-block-border-color: rgba(233, 236, 239, 0.5) !default;
+
+
+// custom
+html {
+    font-family: $font-family-sans-serif;
+}
+
+em {
+    color: $selection-bg;
+}
+
+figcaption, p.caption {
+    font-family: $presentation-heading-font;
+}
+
+.small {
+    font-size: 0.8rem;
+}
+
+
+
+.reveal .slides section.slide.smaller {
+    h2 {
+        font-size: 1.5em;
+    }
+    table {
+        font-size: 0.8em;
+        td {
+            padding: 0.2rem 0.8rem;
+        }
+    }
+}
+
+.reveal pre.sourceCode {
+    font-size: 0.7em;
+}
+
+table {
+    font-size: 0.6em;
+}
+
+.reveal .footer {
+    font-size: 24px;
+}
