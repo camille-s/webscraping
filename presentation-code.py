@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 # from bs4 import BeautifulSoup
 from lxml import html
+import pprint
 
 # get the html
 cb_url = "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.2023.html"
@@ -25,8 +26,9 @@ def extract_info(element):
     else:
         href = None
     return {"tag": tag, "text": text, "href": href}
+
 element_info = [extract_info(el) for el in elements]
-print(element_info[0:2])
+pprint.pp(element_info[0:3])
 
 
 # Make a dataframe 

@@ -17,7 +17,7 @@ format:
         controls-layout: bottom-right
         code-line-numbers: true
         lightbox: true
-        footer: camille-s.github.io/webscraping
+        footer: camille-s.github.io/webscraping - github.com/camille-s/webscraping
 highlight-style: a11y
 execute: 
     echo: false
@@ -37,6 +37,11 @@ extensions:
 ---
 
 # {{< iconify mdi robot-love-outline >}} Intro {data-name="Intro"}
+
+## Intro
+
+* Slides are online [camille-s.github.io/webscraping](https://camille-s.github.io/webscraping)
+* So is the code that generates them [{{< iconify mdi github >}} camille-s/webscraping](https://github.com/camille-s/webscraping)
 
 ## What is web scraping?
 
@@ -156,6 +161,7 @@ import requests
 import pandas as pd
 # from bs4 import BeautifulSoup
 from lxml import html
+import pprint
 
 # get the html
 cb_url = "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.2023.html"
@@ -207,8 +213,9 @@ def extract_info(element):
     else:
         href = None
     return {"tag": tag, "text": text, "href": href}
+
 element_info = [extract_info(el) for el in elements]
-print(element_info[0:2])
+pprint.pp(element_info[0:3])
 ```
 
 ## Clean up
